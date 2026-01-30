@@ -33,49 +33,49 @@ const FlashSale = () => {
   const products = [
     {
       name: "Philips Airfryer",
-      price: "Rp644.000",
-      original: "Rp1.200.000",
-      discount: "46%",
+      price: 644000,
+      original: 1200000,
+      discount: 46,
       image: "bg-gray-200",
       stock: 80,
     },
     {
       name: "Bear Brand Milk",
-      price: "Rp8.900",
-      original: "Rp12.000",
-      discount: "15%",
+      price: 8.900,
+      original: 12.000,
+      discount: 15,
       image: "bg-gray-200",
       stock: 5,
     }, // Low stock: Sisa 1 logic
     {
       name: "Ultra Milk",
-      price: "Rp16.900",
-      original: "Rp20.000",
-      discount: "13%",
+      price: 16900,
+      original: 20000,
+      discount: 13,
       image: "bg-gray-200",
       stock: 10,
     },
     {
       name: "Anker Charger",
-      price: "Rp87.500",
-      original: "Rp200.000",
-      discount: "56%",
+      price: 87500,
+      original: 200000,
+      discount: 56,
       image: "bg-gray-200",
       stock: 100,
     },
     {
       name: "Stand Mixer",
-      price: "Rp494.400",
-      original: "Rp900.000",
-      discount: "45%",
+      price: 494400,
+      original: 900000,
+      discount: 45,
       image: "bg-gray-200",
       stock: 60,
     },
     {
       name: "Kipas Angin",
-      price: "Rp341.050",
-      original: "Rp500.000",
-      discount: "32%",
+      price: 341050,
+      original: 500000,
+      discount: 32,
       image: "bg-gray-200",
       stock: 40,
     },
@@ -136,7 +136,7 @@ const FlashSale = () => {
 
       <div className="flex gap-4">
         {/* Banner Left (Desktop only) */}
-        <div className="hidden lg:block w-[240px] shrink-0 bg-[#D6001C] rounded-lg p-6 relative overflow-hidden flex flex-col justify-center text-center">
+        <div className="hidden lg:block w-60 shrink-0 bg-[#D6001C] rounded-lg p-6 relative overflow-hidden flex flex-col justify-center text-center">
           <div className="absolute inset-0 bg-red-800/20"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-black italic mb-2">BELI 3</h3>
@@ -170,7 +170,7 @@ const FlashSale = () => {
           >
             {products.map((product, idx) => (
               <div key={idx} className="snap-start h-full shrink-0">
-                <div className="w-[140px] md:w-[170px]">
+                <div className="w-35 md:w-42.5">
                   {/* Wrapper to enforce width */}
                   <ProductCard
                     name={product.name}
