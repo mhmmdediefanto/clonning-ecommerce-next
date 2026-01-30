@@ -122,14 +122,14 @@ const PopularCategories = () => {
                 <input
                   type="text"
                   placeholder="Masukan Nomor"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0095DA] text-sm"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0095DA] text-slate-800 text-sm"
                 />
               </div>
               <div className="flex-1 w-full space-y-1">
                 <label className="text-xs font-semibold text-gray-500">
                   Nominal
                 </label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0095DA] text-sm bg-white">
+                <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0095DA] text-slate-800 text-sm bg-white">
                   <option>Pilih Nominal</option>
                   <option>10.000</option>
                   <option>20.000</option>
@@ -147,7 +147,7 @@ const PopularCategories = () => {
 
       {/* Category Pills */}
       <div className="flex flex-wrap gap-2 lg:gap-3">
-        <div className="font-bold text-lg mr-2 self-center hidden lg:block">
+        <div className="font-bold text-lg mr-2 self-center hidden lg:block text-slate-900">
           Kategori Populer
         </div>
         {categories.map((cat, idx) => (

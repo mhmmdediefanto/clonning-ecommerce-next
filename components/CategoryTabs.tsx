@@ -39,7 +39,9 @@ const CategoryTabs = () => {
     <div
       ref={wrapperRef}
       className={`w-full mx-auto overflow-x-auto scrollbar-hide border-b mb-6 scroll-smooth sticky top-22 z-40 pt-4 pb-2 transition-all duration-300 ${
-        isSticky ? "bg-white shadow-sm border-gray-200" : "bg-transparent"
+        isSticky
+          ? "bg-white shadow-sm border-gray-200"
+          : "bg-transparent border-gray-300"
       }`}
     >
       <div className="max-w-7xl px-4 lg:px-8 mx-auto">

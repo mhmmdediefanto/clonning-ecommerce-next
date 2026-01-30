@@ -1,13 +1,14 @@
 import React from "react";
 import { Star, MapPin, BadgeCheck } from "lucide-react";
+import Image from "next/image";
 
 interface ProductCardProps {
   name: string;
-  price: string;
-  originalPrice?: string;
-  discount?: string;
-  image?: string;
-  isOfficialStore?: boolean;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  image: string;
+  brand?: string;
   rating?: number;
   soldCount?: number;
   location?: string;
@@ -19,8 +20,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   originalPrice,
   discount,
-  image = "bg-gray-100",
-  isOfficialStore = false,
+  image,
+  brand,
   rating,
   soldCount,
   location,
@@ -28,12 +29,25 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col h-full overflow-hidden ${className}`}
+      className={` rounded-lg  transition-shadow cursor-pointer flex flex-col h-full overflow-hidden ${className}`}
     >
-      {/* Full width image container */}
       <div
-        className={`w-full aspect-square relative ${image} flex items-center justify-center text-gray-400 text-xs`}
+        className={`w-full aspect-square relative flex items-center justify-center text-gray-400 text-xs ${
+          !image.startsWith("http") && !image.startsWith("/")
+            ? image
+            : "bg-gray-100"
+        }`}
       >
+        {(image.startsWith("http") || image.startsWith("/")) && (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-contain p-4"
+            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 15vw"
+          />
+        )}
+
         {/* Custom Discount Badge */}
         {discount && (
           <span className="absolute top-0 left-0 bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded-br-lg z-10">
@@ -77,11 +91,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
 
           <div className="flex items-center gap-1 text-[10px] text-gray-500">
-            {isOfficialStore ? (
-              <div className="flex items-center gap-1 text-[#0095DA] font-bold">
-                <BadgeCheck size={12} className="fill-[#0095DA] text-white" />
-                <span>Official Store</span>
-              </div>
+            {brand ? (
+              <>
+                <div className="flex items-center gap-1 text-[#0095DA] font-bold">
+                  <BadgeCheck size={12} className="fill-[#0095DA] text-white" />
+                  <span>Official Store</span>
+                </div>
+                <p className="text-[10px] text-slate-600">{brand}</p>
+              </>
             ) : (
               location && (
                 <div className="flex items-center gap-1">
